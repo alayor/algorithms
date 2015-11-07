@@ -1,5 +1,5 @@
-import edu.princeton.cs.algs4.In;
 import java.util.*;
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Digraph;
 
 public class WordNet {
