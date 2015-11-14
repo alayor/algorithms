@@ -37,6 +37,18 @@ public class WordNetTest {
         WordNet wordNet = new WordNet("wordnet/synsets.txt", "wordnet/hypernyms.txt");
         double distance = wordNet.distance("worm", "bird");
         assert distance == 12 : distance;
+
+        distance = wordNet.distance("white_marlin", "mileage");
+        assert distance == 23 : distance;
+
+        distance = wordNet.distance("Black_Plague", "black_marlin");
+        assert distance == 33 : distance;
+
+        distance = wordNet.distance("American_water_spaniel", "histology");
+        assert distance == 32 : distance;
+
+        distance = wordNet.distance("Brown_Swiss", "barrel_roll");
+        assert distance == 29 : distance;
     }
 
     private static void testAncestor() {

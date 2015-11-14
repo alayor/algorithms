@@ -47,20 +47,6 @@ public class SAP {
         return new SAPAux(_diagraph, v, w).getCommonAncestor();
     }
 
-    public static void main(String[] args) {
-//        In in = new In(args[0]);
-//        Digraph G = new Digraph(in);
-//        SAP sap = new SAP(G);
-//        while (!StdIn.isEmpty()) {
-//            int v = StdIn.readInt();
-//            int w = StdIn.readInt();
-//            int length   = sap.length(v, w);
-//            int ancestor = sap.ancestor(v, w);
-//            StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
-//        }
-        SAPTest.runTests();
-    }
-
     private class NodePair {
         private final int v;
         private final int w;
@@ -127,5 +113,9 @@ public class SAP {
         public int getCommonAncestor() {
             return _commonAncestor;
         }
+    }
+
+    public static void main(String[] args) {
+        //SAPTest.runTests();
     }
 }
