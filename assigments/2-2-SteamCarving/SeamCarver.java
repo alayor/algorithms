@@ -28,9 +28,12 @@ public class SeamCarver {
     }
 
     private double getDeltaX(int x, int y) {
-        Color colorFront = _picture.get(x + 1, y);
-        Color colorBack = _picture.get(x - 1, y);
-        return getColorDifference(colorFront, colorBack);
+        if(0 < x && x < _picture.width() - 1) {
+            Color colorFront = _picture.get(x + 1, y);
+            Color colorBack = _picture.get(x - 1, y);
+            return getColorDifference(colorFront, colorBack);
+        }
+        return 0.0;
     }
 
     private double getColorDifference(Color colorFront, Color colorBack) {
@@ -41,9 +44,12 @@ public class SeamCarver {
     }
 
     private double getDeltaY(int x, int y) {
-        Color colorUp = _picture.get(x, y - 1);
-        Color colorDown = _picture.get(x, y + 1);
-        return getColorDifference(colorUp, colorDown);
+        if(0 < y && y < _picture.height() - 1) {
+            Color colorUp = _picture.get(x, y - 1);
+            Color colorDown = _picture.get(x, y + 1);
+            return getColorDifference(colorUp, colorDown);
+        }
+        return 0.0;
     }
 
     public static void main(String[] args) {
